@@ -21,11 +21,22 @@ public class Calculator{
     }
 
     private static int sum(String[] numbers){
+        boolean flag = false;
+        String negNum = "";
         int total = 0;
         
         for(String number : numbers){
-           total += toInt(number);
+            if(number.contains("-")){
+                negNum = number; 
+                flag = true;
+            }
+            total += toInt(number);
         }
-        return total;
+        if(flag == true){
+            throw new IllegalArgumentException("Negatives not allowed: " + negNum);
+        }
+        else { 
+            return total;
+        }
     }
 }

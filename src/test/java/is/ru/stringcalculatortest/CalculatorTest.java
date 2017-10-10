@@ -33,4 +33,15 @@ public class CalculatorTest{
     public void testNewlineBetweenNumbers(){
         assertEquals(6,Calculator.add("1\n2,3"));
     }
+
+    @Test
+    public void ignoreNegativeNumber(){
+        RuntimeException exception = null;
+        try{
+            Calculator.add("-1,2");
+        } catch(IllegalArgumentException e){
+            exception = e;
+        }
+        assertEquals(exception.getMessage(), "Negatives not allowed: -1");
+    }
 }
