@@ -28,4 +28,9 @@ public class CalculatorTest{
     public void testMultipleNumbersWithZeroAndDoubleDigetNumbers(){
         assertEquals(22,Calculator.add("3,3,4,0,1,11"));
     }
+
+    @Test
+    public void testNewlineBetweenNumbers(){
+        assertEquals(6,Calculator.add("1\n2,3"));
+    }
 }
