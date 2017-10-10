@@ -55,4 +55,9 @@ public class CalculatorTest{
         }
         assertEquals(exception.getMessage(), "Negatives not allowed: -1,-4,-5");
     }
+
+    @Test
+    public void ignoreNumbersBiggerThenThousand(){
+        assertEquals(2,Calculator.add("1001,2"));
+    }
 }

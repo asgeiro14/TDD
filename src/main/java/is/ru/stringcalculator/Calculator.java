@@ -29,8 +29,12 @@ public class Calculator{
             if(number.contains("-")){
                 negNum = negNum + number + ","; 
                 flag = true;
+            }else{
+                int toAdd = toInt(number);
+                if(toAdd <= 1000){
+                    total += toAdd;
+                }
             }
-            total += toInt(number);
         }
         if(flag == true){
             String negativeNumbers = negNum.substring(0, negNum.length() - 1);
