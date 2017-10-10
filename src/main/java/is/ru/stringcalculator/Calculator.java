@@ -12,7 +12,7 @@ public class Calculator{
                     String numbers[] = text.split(",");
                     return sum(numbers);
                 }
-                return 1;
+                return toInt(text);
             }
     }
 
