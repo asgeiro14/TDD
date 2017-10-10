@@ -27,13 +27,14 @@ public class Calculator{
         
         for(String number : numbers){
             if(number.contains("-")){
-                negNum = number; 
+                negNum = negNum + number + ","; 
                 flag = true;
             }
             total += toInt(number);
         }
         if(flag == true){
-            throw new IllegalArgumentException("Negatives not allowed: " + negNum);
+            String negativeNumbers = negNum.substring(0, negNum.length() - 1);
+            throw new IllegalArgumentException("Negatives not allowed: " + negativeNumbers);
         }
         else { 
             return total;
