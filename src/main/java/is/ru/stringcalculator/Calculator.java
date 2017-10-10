@@ -5,9 +5,7 @@ public class Calculator{
     public static int add(String text){
         if(text.startsWith("//")){
             String newString = text.substring(4);
-            newString = newString.replaceAll(Character.toString(text.charAt(2)), ",");
-            String numbers[] = newString.split(",");
-            return sum(numbers);
+            text = newString.replaceAll(Character.toString(text.charAt(2)), ",");
         }
         text = text.replaceAll("\n", ",");
         if(text.equals("")){
